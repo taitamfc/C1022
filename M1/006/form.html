@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    So A <input type="text" id="so_a" value=""> <br>
+    So B <input type="text" id="so_b" value=""> <br>
+    <!-- <input type="button" value="Xu ly" onclick=" xu_ly()  "> -->
+    <input type="button" value="Xu ly" id="nut">
+    <p id="ket_qua"> inner </p>
+    <script>
+        //bat su kien trong qua javascript
+        /*
+        document.getElementById('ID_CUA_THE').addEventListener('TEN_SU_KIEN',function(){
+
+        })
+        */
+        document.getElementById('nut').addEventListener('click',function(){
+            // alert(123);
+            // tim phan tu co ID la so_a
+            let so_a = document.getElementById('so_a').value;
+            // tim phan tu co ID la so_b, gan vao bien so_b
+            let so_b = document.getElementById('so_b').value;
+            console.log( 'so A', so_a);
+            console.log( 'so B', so_b);
+            let ket_qua = so_a * so_b;
+            // alert( ket_qua );
+            //dua gia tri vao giua the
+            document.getElementById('ket_qua').innerHTML = '<strong>' + ket_qua + '</strong>';
+            // text: chi hien thi chu
+            //html: hien thi the html
+        });
+
+
+        // tao khoi xu ly co ten la xu_ly()
+        function xu_ly(){
+            // alert(123);
+            // tim phan tu co ID la so_a
+            let so_a = document.getElementById('so_a').value;
+            // tim phan tu co ID la so_b, gan vao bien so_b
+            let so_b = document.getElementById('so_b').value;
+            console.log( 'so A', so_a);
+            console.log( 'so B', so_b);
+            let ket_qua = so_a * so_b;
+            // alert( ket_qua );
+            //dua gia tri vao giua the
+            document.getElementById('ket_qua').innerHTML = '<strong>' + ket_qua + '</strong>';
+            // text: chi hien thi chu
+            //html: hien thi the html
+        }
+    </script>
+</body>
+</html>
