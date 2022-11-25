@@ -1,0 +1,38 @@
+<script>
+    //- cu phap tao lop
+    let SinhVien = function(){
+    // function SinhVien(){
+        // Thuoc tinh
+        this.ten = '';
+        this.tuoi = 0;
+        this.so_thich = [];
+
+        // Phuong thuc
+        this.relax = function(){
+            
+        }
+
+    }
+
+    //- khoi tao doi tuong
+    let huyen = new SinhVien();
+    // Thiet lap gia tri cac thuoc tinh
+    huyen.ten = 'Huyen';
+    huyen.tuoi = 21;
+    // truy cap thuoc tinh
+    console.log( huyen.ten );
+    // truy cap phuong thuc
+    huyen.relax();
+
+    let nho   = new SinhVien();
+    nho.ten = 'Nho';
+    nho.tuoi = 21;
+
+    let phong = new SinhVien();
+    phong.ten = 'Phong';
+    phong.tuoi = 21;
+
+    console.log(huyen);
+    console.log(nho);
+    console.log(phong);
+</script>

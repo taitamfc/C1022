@@ -1,0 +1,35 @@
+<script>
+
+
+    let nho = {
+        ten: 'Nho',
+        tuoi: 21,
+        so_thich: ['Van','Su','Dia'],
+        work: function(){
+            console.log('work');
+            this.relax();
+        },
+        relax: function(){
+            console.log('relax');
+        },
+        gioi_thieu(){
+            console.log( 'Ten: ' + this.ten );
+            console.log( 'Tuoi: ' + this.tuoi );
+            console.log( 'So Thich: ' + this.so_thich );
+
+            this.work();
+            this.relax();
+        }
+    }
+
+    // truy cap thuoc tinh
+    console.log( nho.ten );
+    console.log( nho.so_thich );
+    console.log( nho.tuoi );
+
+    //truy cap phuong thuc
+    // nho.work();
+    // nho.relax();
+    nho.gioi_thieu();
+
+</script>

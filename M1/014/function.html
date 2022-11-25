@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        // Cú pháp khai báo hàm không tham số
+        function ten_ham( ) {
+            //đoạn mã xử lí
+        }
+        //Gọi hàm
+        ten_ham();
+        */
+
+        /*
+        // Cú pháp khai báo hàm có tham số:
+        function ten_ham( tham_so1, tham_so2) {
+            //đoạn mã xử lí
+        }
+        //Gọi hàm
+        ten_ham(  doi_so1,doi_so2 );
+        */
+
+        /*
+        tên hàm: sum
+        tham số: a,b
+        xử lý: in ra tong cua a va b
+        gọi hàm: truyen vao lan luot 5 va 6
+        */
+
+        /*
+        tên hàm: xin_chao
+        tham số: ten
+        xử lý: in ra ( dung console.log() ) 'Chao mung' + ten + 'da toi Codegym';
+
+        gọi hàm 3 lần
+            1. đối số Huyền
+            1. đối số Nho
+            1. đối số Phong
+        */
+
+        /*
+            function ten_ham(tham_so1, tham_so2){
+                return 5;
+            }
+
+            goi ham :
+
+            alert( ten_ham ( doi_so1, doi_so2)  );
+
+            var bien_chua_gia_tri = ten_ham ( doi_so1, doi_so2);
+            alert( bien_chua_gia_tri )
+ 
+        */
+
+        function sum( a,b  ){
+            let c = a + b;
+            return c;
+        }
+
+        let ket_qua = sum(5,6);//11
+        console.log( ket_qua );
+
+        console.log( sum(7,8) );
+
+        /*
+            Khai bao bien
+                let ten_bien = gia_tri
+            Khai bao mang
+
+            Cau truc dieu kien
+                - If
+                - If-else
+                - If-else-if-else
+                - Switch-case
+            Vong lap
+                - For
+                - While
+                - Do-while    
+            Ham
+                - Khong tham so
+                - Co tham so
+                - Co su tra ve
+        */
+
+        function main() {
+
+            console.log("Sum from 1 to 10 is " + sum(1, 10));
+            console.log("Sum from 20 to 37 is " + sum(20, 37));
+            console.log("Sum from 35 to 49 is " + sum(35, 49));
+        }
+
+        main();
+
+
+    </script>
+</body>
+
+</html>
