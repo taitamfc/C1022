@@ -1,22 +1,25 @@
 <?php
 include_once 'models/Product.php';
 
-class ProductController {
+class ProductController extends Controller {
     // Gọi tới trang danh sách
     public function index(){
-        
         // Gọi model
         $objProduct = new Product();
         // Model thao tác với CSDL, trả về controller
         $items = $objProduct->all();
+
         // Truyen xuong view
-        include_once 'views/products/index.php';
+        $params = [
+            'items' => $items
+        ];
+        $this->view('products/index.php',$params);
     }
 
     // Gọi tới trang thêm mới
     public function create(){
-        // Gọi view
-        include_once 'views/products/create.php';
+        // Gọi view ma ko truyen bien
+        $this->view('products/create.php');
     }
     // Xử lý thêm mới
     public function store(){
@@ -35,8 +38,7 @@ class ProductController {
         $objProduct->save($data);
 
         // Chuyển hướng về trang danh sách
-        header("Location: index.php?controller=product&action=index ");
-        die();
+        $this->redirect('index.php?controller=product&action=index');
     }
 
     // Gọi tới trang chỉnh sửa
@@ -46,7 +48,11 @@ class ProductController {
         $objProduct = new Product();
         $item = $objProduct->find($id);
         // truyen xuong view
-        include_once 'views/products/edit.php';
+        $params = [
+            'id' => $id,
+            'item' => $item
+        ];
+        $this->view('products/edit.php',$params);
     }
 
     // Xử lý chỉnh sửa
@@ -68,8 +74,7 @@ class ProductController {
         $objProduct->update($id,$data);
 
         // Chuyển hướng về trang danh sách
-        header("Location: index.php?controller=product&action=index ");
-        die();
+        $this->redirect('index.php?controller=product&action=index');
     }
 
     public function destroy(){
@@ -79,7 +84,6 @@ class ProductController {
         $objProduct->delete($id);
 
         // Chuyển hướng về trang danh sách
-        header("Location: index.php?controller=product&action=index ");
-        die();
+        $this->redirect('index.php?controller=product&action=index');
     }
 }

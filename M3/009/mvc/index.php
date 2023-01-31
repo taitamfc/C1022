@@ -1,75 +1,37 @@
-<?php
-
-// index.php?controller=product&action=index
-// index.php?controller=user&action=create
-// index.php?controller=cagetory&action=edit&id=1
-
-// echo '<pre>';
-// print_r( $_REQUEST );
-// die();
-// Kiểm tra tồn tại chỉ số controller trong mảng $_REQUEST
-if( isset( $_REQUEST['controller'] ) ){
-    $controller = $_REQUEST['controller'];
-}else{
-    $controller = 'product';
-}
-
-// Kiểm tra tồn tại chỉ số action trong mảng $_REQUEST
-if( isset( $_REQUEST['action'] ) ){
-    $action = $_REQUEST['action'];
-}else{
-    $action = 'index';
-}
-
-// Quyết định gọi controller nào dựa vào biến controller
-switch ($controller) {
-    case 'product':
-        include_once 'controllers/ProductController.php';
-        $objController = new ProductController();
-        break;
-    case 'user':
-        include_once 'controllers/UserController.php';
-        $objController = new UserController();
-        break;
-    case 'category':
-        include_once 'controllers/CategoryController.php';
-        $objController = new CategoryController();
-        break;
-    default:
-        # code...
-        break;
-}
-// Quyết định gọi action nào dựa vào biến action
-switch ($action) {
-    // Hiển thị trang danh sách
-    case 'index':
-        $objController->index();
-        break;
-    // Hiển thị form thêm mới
-    case 'create':
-        $objController->create();
-        break;
-    // Xử lý thêm mới
-    case 'store':
-        $objController->store();
-        break;
-    // Hiển thị form chỉnh sửa
-    case 'edit':
-        $objController->edit();
-        break;
-    // Xử lý chỉnh sửa
-    case 'update':
-        $objController->update();
-        break;
-    // Hiển thị trang xóa
-    case 'edit':
-        $objController->edit();
-        break;
-     // Xử lý xóa
-    case 'destroy':
-        $objController->destroy();
-        break;
-    default:
-        $objController->index();
-        break;
-}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Dashboard - SB Admin</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="public/css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+    <?php include_once 'layouts/header.php';?>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <?php include_once 'layouts/sidebar.php';?>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <?php include_once 'route.php';?>
+                    </div>
+                </main>
+                <?php include_once 'layouts/footer.php';?>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="public/js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="public/assets/demo/chart-area-demo.js"></script>
+        <script src="public/assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="public/js/datatables-simple-demo.js"></script>
+    </body>
+</html>
