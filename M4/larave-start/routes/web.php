@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\CustomerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -142,3 +144,21 @@ Route::post('login',function(Request $request){
     // todo
     // $_REQUEST;
 });
+
+// Photo
+// Route::group([
+//     'prefix' => 'photos'
+// ],function(){
+//     Route::get('index',[PhotoController::class,'index'])->name('photos.index');
+//     Route::get('show/{id}',[PhotoController::class,'show'])->name('photos.show');
+//     Route::get('create',[PhotoController::class,'create'])->name('photos.create');
+//     Route::get('edit/{id}',[PhotoController::class,'edit'])->name('photos.edit');
+//     Route::put('update/{id}',[PhotoController::class,'update'])->name('photos.update');
+//     Route::delete('destroy/{id}',[PhotoController::class,'destroy'])->name('photos.destroy');
+//     Route::post('store',[PhotoController::class,'store'])->name('photos.store');
+// });
+
+Route::resource('photos',PhotoController::class);
+
+//use App\Http\Controllers\CustomerController;
+Route::resource('customers',CustomerController::class);
