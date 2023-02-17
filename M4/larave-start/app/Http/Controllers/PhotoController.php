@@ -7,16 +7,35 @@ use Illuminate\Http\Request;
 class PhotoController extends Controller
 {
     public function index(){
-        return view('photos.index');
+        $params = [
+            'id'    => 1,
+            'name'  =>'phong',
+            'age'   =>18
+        ];
+        // extract($params);
+        $id     = 1;
+        $name   = 'phong';
+        $age    = 18;
+
+        return view('admin.photos.index')
+            ->with('id',$id)
+            ->with('name',$name)
+            ->with('age',$age)
+            ->with('params',$params)
+        ;
+        //return view('photos.index', compact( 'id','name','age' ) );
+        //return view('photos.index',$params);
     }
     public function show($id){
         $params = [
-            'id' => $id
+            'id'    => 1,
+            'name'  =>'phong',
+            'age'   =>18
         ];
         return view('photos.show',$params);
     }
     public function create(){
-        return view('photos.create');
+        return view('admin.photos.create');
     }
     public function store(Request $request){
         dd($request->all());

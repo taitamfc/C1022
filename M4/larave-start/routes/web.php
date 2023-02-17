@@ -135,9 +135,6 @@ Route::post('xu-ly-lien-he-codegym',function(Request $request){
     return redirect('lien-he-thanh-cong123');//http://127.0.0.1:8000/lien-he-thanh-cong123
 });
 
-Route::get('login',function(){
-    // Hien thi form
-});
 
 Route::post('login',function(Request $request){
     //Nhan du lieu
@@ -162,3 +159,32 @@ Route::resource('photos',PhotoController::class);
 
 //use App\Http\Controllers\CustomerController;
 Route::resource('customers',CustomerController::class);
+
+// Tạo route admin + middware: auth
+    //echo trang admin
+// Tao route login -> name: login
+    //echo trang 
+    
+Route::get('admin',function(){
+    echo 'trang admin';
+})->middleware('auth');
+
+Route::get('login123',function(){
+    echo 'trang login';
+})->name('login');
+
+// uong bia
+Route::get(
+    'uong-bia/{age}',
+    [PhotoController::class,'index']
+)->middleware(['checkage','after_middleware']);
+
+// uong nuoc ngot
+Route::get('uong-nuoc-ngot',function(){
+    echo 'ban duoc uong nuoc ngot';
+})->name('uong-nuoc-ngot');
+
+
+Route::get('admin/test',function(){
+    return view('admin.layouts.master');
+});
