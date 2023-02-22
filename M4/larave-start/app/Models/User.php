@@ -41,4 +41,28 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //1 user co 1 phone
+    public function phone(){
+        //return $this->hasOne(Phone::class);
+        return $this->hasOne(Phone::class,'user_id','id');
+    }
+    // 1 user co nhieu posts (bai viet)
+    public function posts(){
+        return $this->hasMany(Post::class);
+        // user_id: khoa ngoai tham chieu toi bang hien tai
+        // id: khoa chinh cua bang hien tai
+        // return $this->hasMany(Post::class,'user_id','id');
+    }
+    // 1 user co nhieu comments ( binh luan )
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
+    //https://laravel.com/docs/10.x/eloquent-relationships#many-to-many
+    // 1 user co nhieu roles ( vai tro )
+    public function roles(){
+        //return $this->belongsToMany(Role::class);
+        return $this->belongsToMany(Role::class,'role_user','user_id','role_id');
+    }
 }

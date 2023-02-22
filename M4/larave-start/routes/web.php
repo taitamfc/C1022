@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\CustomerController;
+use App\Models\Category;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -187,4 +188,12 @@ Route::get('uong-nuoc-ngot',function(){
 
 Route::get('admin/test',function(){
     return view('admin.layouts.master');
+});
+
+Route::get('test-db',function(){
+    // $item = Category::find(2);//null
+    // $item = Category::findOrFail(2);//404
+    //$item = Category::first();//null
+    $item = Category::firstOrFail();//404
+    dd($item);
 });
