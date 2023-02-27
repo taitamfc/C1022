@@ -17,11 +17,11 @@ class Category extends Model
     protected $primaryKey = 'id';
     // Khai bao bang ko co created_at,updated_at
 
-    // public $timestamps = false;
+    public $timestamps = false;
     // thay the cho created_at
-    const CREATED_AT = 'creation_date';
+    //const CREATED_AT = 'creation_date';
     // thay the cho updated_at
-    const UPDATED_AT = 'updated_date';
+    //const UPDATED_AT = 'updated_date';
 
     protected $fillable = ['name','description'];
 

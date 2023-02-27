@@ -211,3 +211,11 @@ Route::get('UserNotFoundException',[ExeptionController::class,'fun_UserNotFoundE
 
 Route::get('validator/create',[ValidatorController::class,'create'])->name('validator.create');
 Route::post('validator/store',[ValidatorController::class,'store'])->name('validator.store');
+
+Route::get('tao_ss',[\App\Http\Controllers\SessionController::class,'tao_ss']);
+Route::get('dung_ss',[\App\Http\Controllers\SessionController::class,'dung_ss']);
+Route::get('capnhat_ss',[\App\Http\Controllers\SessionController::class,'capnhat_ss']);
+Route::get('xoa_ss',[\App\Http\Controllers\SessionController::class,'xoa_ss']);
+Route::get('them_vao_gio/{id_sp}/{sl}',[\App\Http\Controllers\CartController::class,'them_vao_gio']);
+Route::get('xoa_gio_hang/{id_sp}',[\App\Http\Controllers\CartController::class,'xoa_gio_hang']);
+Route::get('xem_gio_hang/',[\App\Http\Controllers\CartController::class,'xem_gio_hang']);
