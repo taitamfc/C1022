@@ -216,6 +216,10 @@ Route::get('tao_ss',[\App\Http\Controllers\SessionController::class,'tao_ss']);
 Route::get('dung_ss',[\App\Http\Controllers\SessionController::class,'dung_ss']);
 Route::get('capnhat_ss',[\App\Http\Controllers\SessionController::class,'capnhat_ss']);
 Route::get('xoa_ss',[\App\Http\Controllers\SessionController::class,'xoa_ss']);
-Route::get('them_vao_gio/{id_sp}/{sl}',[\App\Http\Controllers\CartController::class,'them_vao_gio']);
+
+Route::get('danh-sach-san-pham',[\App\Http\Controllers\ProductController::class,'index']);
+Route::get('chi-tiet-san-pham/{id_sp}',[\App\Http\Controllers\ProductController::class,'show']);
+Route::post('them_vao_gio',[\App\Http\Controllers\CartController::class,'them_vao_gio']);
+Route::post('cap_nhat_gio_hang',[\App\Http\Controllers\CartController::class,'cap_nhat_gio_hang']);
 Route::get('xoa_gio_hang/{id_sp}',[\App\Http\Controllers\CartController::class,'xoa_gio_hang']);
 Route::get('xem_gio_hang/',[\App\Http\Controllers\CartController::class,'xem_gio_hang']);
