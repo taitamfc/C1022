@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Nhung vao -->
+    <script src="./jquery-3.6.3.min.js"></script>
+</head>
+<body>
+    <script>
+        // Lay phan tu co id la btn
+        // Lay phan tu theo id
+        // document.getElementById('btn').addEventListener('click',function(){
+        //     alert('click me');
+        // });
+        // Lay phan tu theo class
+        document.getElementsByClassName('btn-class');
+        // Lay phan tu theo tag
+        document.getElementsByTagName('button')
+        /*
+            $( selector ).action();
+            selector: dua theo CSS Selector
+            - tag
+            - id
+            - class
+        */ 
+        // $('#btn');
+        // $('.btn-class');
+        // $('button')
+
+        /*
+        Su kien cua button
+            click
+            change
+            dbclick
+        */
+        // khi tai lieu da san sang    
+        $( document ).ready( function(){
+            $('#btn').click( function(){
+                alert('click')
+            } );
+        });   
+
+    </script>
+
+    <button id="btn" class="btn-class">Click me</button>
+</body>
+</html>

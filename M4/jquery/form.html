@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="">
+        Username: <input type="text" id="username" name="username"> <br>
+        <p id="username_error" class="error"></p>
+        Password: <input type="password" id="password" name="password"> <br>
+        <p id="password_error" class="error"></p>
+        <button type="button" id="btn"> Login </button>
+    </form>
+
+    <script src="./jquery-3.6.3.min.js"></script>
+    <script>
+        $( document ).ready( function(){
+            //Bat su kien click cua id: btn
+                // Lay gia tri o input id la username .val() gan vao bien username
+                // Lay gia tri o input id la password .val() gan vao bien password
+                // alert 2 bien username va password
+            $('#btn').click(function(){
+                var username = $('#username').val();
+                var password = $('#password').val();
+                // alert(username);
+
+                // Tim pt co class error: lam rong noi dung: .text('') | .html('')
+                $('.error').html('');
+                // Neu username rong: tim pt username_error dua vao chuoi 'vui long nhap username': .text( 'ND' ) | .html('ND')
+                if(username==''){
+                    $('#username_error').html('vui long nhap username');
+                }
+                // Neu password rong: tim pt password_error dua vao chuoi 'vui long nhap password': .text( 'ND' ) | .html('ND')
+                if(password==''){
+                    $('#password_error').html('vui long nhap password');
+                }
+
+                // ajax 
+                let options = {
+                    // method
+                    method : 'POST',
+                    // action
+                    url: 'ajax.php',
+                    //iputs
+                    //lam viec voi json
+                    dataType: 'json',
+                    data: {
+                        // name="input_username"
+                        input_username: username,
+                        // name="input_password"
+                        input_password: password
+                    },
+                    success: function( response ){
+                        console.log( response.input_username );//html => json
+                    }
+                };
+
+                $.ajax( options );
+
+            })
+            
+
+        });
+    </script>
+</body>
+</html>

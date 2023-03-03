@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Nhung vao -->
+    <script src="./jquery-3.6.3.min.js"></script>
+</head>
+<body>
+    <p> Xin chao cac ban </p>
+    <button id="btn-hide">Click hide</button>
+    <button id="btn-show">Click show</button>
+    <script>
+        // $( selector ).action();
+        // selector: id, tag, class
+        // $('#id')
+        // $('.class')
+        // $('tag') 
+        $( document ).ready( function(){
+            // Tim pt co id  btn-hide, goi pt click
+                $('#btn-hide').click(function(){
+                    $('p').hide();
+                });
+                //tim pt p goi pt hide
+            // tim phan thu co id btn-show, goi phuong thuc click
+            $('#btn-show').click(function(){
+                // tim phan tu p goi phuong thuc show
+                $('p').show();
+            })
+
+        });   
+
+    </script>
+</body>
+</html>
