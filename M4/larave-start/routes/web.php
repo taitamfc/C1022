@@ -223,3 +223,10 @@ Route::post('them_vao_gio',[\App\Http\Controllers\CartController::class,'them_va
 Route::post('cap_nhat_gio_hang',[\App\Http\Controllers\CartController::class,'cap_nhat_gio_hang']);
 Route::get('xoa_gio_hang/{id_sp}',[\App\Http\Controllers\CartController::class,'xoa_gio_hang']);
 Route::get('xem_gio_hang/',[\App\Http\Controllers\CartController::class,'xem_gio_hang']);
+
+Route::get('user_info',function(){
+    $user = \App\Models\User::find(1);
+    dd($user->group->roles->toArray());
+});
+
+Route::resource('users',\App\Http\Controllers\UserController::class);

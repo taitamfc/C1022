@@ -65,4 +65,23 @@ class User extends Authenticatable
         //return $this->belongsToMany(Role::class);
         return $this->belongsToMany(Role::class,'role_user','user_id','role_id');
     }
+
+    // khai bao MQH voi Group
+    public function group(){
+        return $this->belongsTo(Group::class);
+    }
+
+    public function hasPermission($role_name){
+        // $role_name = 'User_show';
+        $user_roles = $this->group->roles->pluck('name')->toArray();
+        /*
+        0 => "User_viewAny"
+        1 => "User_create"
+        */
+        if( in_array($role_name,$user_roles) ){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
