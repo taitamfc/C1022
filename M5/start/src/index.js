@@ -1,105 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import './styles.css';
-import App from './App';
+import reportWebVitals from './reportWebVitals';
 import Header from './Header';
 import Footer from './Footer';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-const hello = React.createElement(
-  'h1',
+const phone = 123456;
+const products = [
   {
-    id: 'tieude',
-    className: 'title',
+    name: 'Iphoen 1',
+    price: 2000,
+    color: 'red'
   },
-  'Xin chao anh em'
-); 
-
-
-function getGreeting(user) {
-  if (user) {
-    return <h1>Hello, {formatName(user)}!</h1>;
+  {
+    name: 'Iphoen 2',
+    price: 2000,
+    color: 'red'
   }
-  return <h1>Hello, Stranger.</h1>;
+]
+
+// Tao App
+function App(){
+  return (
+    <>
+      <Header name="CodeGym123" phone={phone} products={products}/>
+      <h1>Noi dung</h1>
+      <Footer />
+    </>
+  )
 }
-
-function formatName(user) {
-  return user.firstName + ' ' + user.lastName;
-}
-
-const user = {
-  firstName: 'Harper',
-  lastName: 'Perez'
-};
-
-const element = (
-  <h1>
-    Hello, {formatName(user)}!
-  </h1>
-);
-
-const h1 = ( <h1>
-              Hello anh em 2
-            </h1>
-);
-
-const div = (
-  <div className="red">
-    <div className="blue"></div>
-  </div>
-)
-
-
-const elm2 = (
-  <div children={<div className="white" />} className="black" />
-);
-
-const mystyle = {
-  color: "white",
-  backgroundColor: "DodgerBlue",
-  padding: "10px",
-  fontFamily: "Arial"
-};
-
-const id = 'tieude';
-
-const h2 = (
-  <h2 style={mystyle} id={id}> Xin chao h2 </h2>
-);
-
-// const App = () => {
-
-// }
-
-
-// root.render( 
-//   <>
-//     <Header/> 
-//     <App/> 
-//     <Footer/>
-//   </>
-// );
-
-const name = "Your name";
-// const elm3 = React.createElement("h1", { style: { textAlign: "center" } }, name);
-
-const books = ['Van','Su','Dia'];
-
-root.render( 
-  <ul>
-    {
-      
-      books.map( (book) => (
-        <li> {book} </li>
-      )  )
-
-
-    }
-  </ul>
-);
+// Render App
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render( <App/>);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
