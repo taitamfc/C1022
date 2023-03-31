@@ -5,14 +5,16 @@ import reportWebVitals from './reportWebVitals';
 import StateFun from './StateFun';
 import StateClass from './StateClass';
 import Count from './Count';
+import Calculator from './Calculator';
 
 // Render App
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render( 
   <>
-    <Count/>
+    <Calculator/>
+    {/* <Count/>
     <StateFun/>
-    <StateClass/>
+    <StateClass/> */}
   </>
 );
 
