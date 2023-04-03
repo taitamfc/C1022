@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 
 class Todo extends Component {
     constructor(props) {
+        console.log('Initialization ');
         super(props);
 
+        // Tao state
         this.state = {
             editId: -1,
             todo: null,
@@ -62,7 +64,30 @@ class Todo extends Component {
         this.setState( { editId: -1 } )
     }
 
+    componentDidMount() {
+        console.log("componentDidMount da chay");
+    }
+
+    // Update state
+    shouldComponentUpdate () {
+        return true;
+    }
+    UNSAFE_componentWillUpdate (){
+        console.log("UNSAFE_componentWillUpdate  da chay");
+    }
     render() {
+        /*
+        this.state = {
+            editId: -1,
+            todo: null,
+            todos: []
+        }
+        */
+
+        let {editId,todo,todos} = this.state;
+        console.log(editId);
+        console.log(todo);
+        console.log(todos);
         const addButton = <button onClick={this.addTodo}> Add </button>;
         const updateButton = <button onClick={this.updateTodo}> Update </button>;
         return (
@@ -108,6 +133,9 @@ class Todo extends Component {
                 </table>
             </div>
         );
+    }
+    componentDidUpdate () {
+        console.log("componentDidUpdate  da chay");
     }
 }
 
