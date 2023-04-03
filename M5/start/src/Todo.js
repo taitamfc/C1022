@@ -13,7 +13,7 @@ class Todo extends Component {
         }
     }
 
-    setTodo = (value) => {
+    handleSetTodo = (value) => {
         this.setState({ todo: value })
     }
     addTodo = () => {
@@ -77,7 +77,7 @@ class Todo extends Component {
                 }
 
                 <input type={'text'}
-                    onChange={(e) => this.setTodo(e.target.value)}
+                    onChange={(e) => this.handleSetTodo(e.target.value)}
                     value={ this.state.todo }
                 />
 
