@@ -6,15 +6,17 @@ import StateFun from './StateFun';
 import StateClass from './StateClass';
 import Count from './Count';
 import Calculator from './Calculator';
+import Todo from './Todo';
 
 // Render App
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render( 
   <>
-    <Calculator/>
+    {/* <Calculator/> */}
     {/* <Count/>
     <StateFun/>
     <StateClass/> */}
+    <Todo/>
   </>
 );
 

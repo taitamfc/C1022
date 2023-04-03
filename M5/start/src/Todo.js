@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class Todo extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -11,39 +11,55 @@ class Todo extends Component {
     }
 
     setTodo = (value) => {
-        
+        this.setState({ todo: value })
     }
     addTodo = () => {
-        alert(123);
+        let cr_todos = this.state.todos;
+        cr_todos.push(this.state.todo);
+
+        this.setState({ todos: cr_todos })
+
     }
     editTodo = (id) => {
-        
+
     }
     deleteTodo = (id) => {
-        
+
     }
 
     render() {
         return (
             <div>
-                <input type={'text'} 
-                        onChange={ (e) => this.setTodo(e.target.value)} 
-                    /> 
-                <button onClick={this.addTodo}> Add </button>    
-                <br/>
+                <h1> {this.state.todo} </h1>
+                <input type={'text'}
+                    onChange={(e) => this.setTodo(e.target.value)}
+                />
+                <button onClick={this.addTodo}> Add </button>
+                <br />
                 <table>
-                {
-                    this.todos.map( (todo) => (
-                    <tr>    
-                        <td>
-                            {todo}
-                        </td>
-                    </tr>
-                    ) )
-                }
+                    <thead>
+                        <tr>
+                            <th> Ten nhiem vu </th>
+                            <th> Hanh dong </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            this.state.todos.map( (todo,key) => (
+                                <tr key={key}>
+                                    <td>
+                                        {todo}
+                                    </td>
+                                    <td> 
+                                        <button onClick={ () => this.editTodo(key) }> Edit </button> 
+                                        | 
+                                        <button onClick={ () => this.deleteTodo(key) }> Delete </button> 
+                                    </td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
                 </table>
-
-
             </div>
         );
     }
