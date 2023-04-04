@@ -35,7 +35,9 @@ function Student(props) {
             }
         )
     }
-    const handleSubmit = () => {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
         students.push( formData )
         let new_students = [...students]
         setStudents(new_students);
