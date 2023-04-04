@@ -9,12 +9,35 @@ function Student(props) {
     const [students,setStudents] = useState([]);
 
     const handleChange = (event) => {
-        console.log(event.target);
+        console.log(event.target.value);
+        console.log(event.target.name);
+
+        /*
+            switch (event.target.name) {
+                case 'name':
+                    formData['name'] = event.target.value;
+                    break;
+                case 'email':
+                    formData['email'] = event.target.value;
+                    break;
+                case 'password':
+                    formData['password'] = event.target.value;
+                    break;
+                default:
+                    break;
+            }
+        */
+        formData[event.target.name] = event.target.value;
+        setFormData(
+            {
+                ...formData,
+                [event.target.name]: event.target.value
+            }
+        )
     }
     const handleSubmit = () => {
 
     }
-
     const editStudent = (id) => {
     }
     const deleteStudent = (id) => {
@@ -22,6 +45,10 @@ function Student(props) {
 
     return (
         <div>
+            Name: {formData.name} <br/>
+            Email: {formData.email} <br/>
+            Password: {formData.password} <br/>
+            <hr/>
             <form onSubmit={handleSubmit}>
                 Name <input type='text' name='name' onChange={handleChange} /> <br/>
                 Email <input type='email' name='email' onChange={handleChange} /> <br/>
