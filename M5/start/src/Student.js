@@ -79,12 +79,27 @@ function Student(props) {
             >
             {({ errors, touched }) => (
 
-                <form>
-                    Name <input type='text' name='name' onChange={handleChange} value={formData.name} /> <br/>
-                    Email <input type='email' name='email' onChange={handleChange} value={formData.email} /> <br/>
-                    Password <input type='password' name='password' value={formData.password} onChange={handleChange} /> <br/>
+                <Form>
+                    Name 
+                    <Field name="name" /> <br/>
+                    {errors.name && touched.name ? (
+                        <div>{errors.name}</div>
+                    ) : null}
+                    {/* <input type='text' name='name' onChange={handleChange} value={formData.name} /> <br/> */}
+                    Email 
+                    <Field name="email" /> <br/>
+                    {errors.email && touched.email ? (
+                        <div>{errors.email}</div>
+                    ) : null}
+                    {/* <input type='email' name='email' onChange={handleChange} value={formData.email} /> <br/> */}
+                    Password 
+                    <Field name="password" /> <br/>
+                    {errors.password && touched.password ? (
+                        <div>{errors.password}</div>
+                    ) : null}
+                    {/* <input type='password' name='password' value={formData.password} onChange={handleChange} /> <br/> */}
                     <button > Register </button>
-                </form>
+                </Form>
 
             )}
             </Formik>
