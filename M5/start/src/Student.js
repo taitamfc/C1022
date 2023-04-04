@@ -7,51 +7,50 @@ function Student(props) {
         password : ''
     });
     const [students,setStudents] = useState([]);
+    const [formErrors,setFormErrors] = useState([]);
 
     const handleChange = (event) => {
-        console.log(event.target.value);
-        console.log(event.target.name);
-
-        /*
-            switch (event.target.name) {
-                case 'name':
-                    formData['name'] = event.target.value;
-                    break;
-                case 'email':
-                    formData['email'] = event.target.value;
-                    break;
-                case 'password':
-                    formData['password'] = event.target.value;
-                    break;
-                default:
-                    break;
-            }
-        */
-        formData[event.target.name] = event.target.value;
         setFormData(
             {
                 ...formData,
                 [event.target.name]: event.target.value
             }
         )
+        
     }
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        students.push( formData )
-        let new_students = [...students]
-        setStudents(new_students);
+        let error = false;
+        if( formData.name == '' ){
+            error = true;
+        }
+        if( formData.email == '' ){
+            error = true;
+        }
+        if( formData.password == '' ){
+            error = true;
+        }
 
+        if( error ){
+            alert('Vui long nhap du lieu');
+        }else{
+            students.push( formData )
+            let new_students = [...students]
+            setStudents(new_students);
 
-        // Làm rỗng đối tượng formData
-        setFormData(
-            {
-                ...formData,
-                name: '',
-                email: '',
-                password: ''
-            }
-        )
+            // Làm rỗng đối tượng formData
+            setFormData(
+                {
+                    ...formData,
+                    name: '',
+                    email: '',
+                    password: ''
+                }
+            )
+        }
+
+        
     }
     const editStudent = (id) => {
     }
