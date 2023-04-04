@@ -26,39 +26,13 @@ function Student(props) {
         )
         
     }
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = (values) => {
 
-        let error = false;
-        if( formData.name == '' ){
-            error = true;
-        }
-        if( formData.email == '' ){
-            error = true;
-        }
-        if( formData.password == '' ){
-            error = true;
-        }
+        students.push( values )
+        let new_students = [...students]
+        setStudents(new_students);
 
-        if( error ){
-            alert('Vui long nhap du lieu');
-        }else{
-            students.push( formData )
-            let new_students = [...students]
-            setStudents(new_students);
-
-            // Làm rỗng đối tượng formData
-            setFormData(
-                {
-                    ...formData,
-                    name: '',
-                    email: '',
-                    password: ''
-                }
-            )
-        }
-
-        
+        // Làm rỗng formik
     }
     const editStudent = (id) => {
     }
