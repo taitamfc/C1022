@@ -3,9 +3,9 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 
 const rules = Yup.object().shape({
-    name: Yup.required('Truong yeu cau').min(3,'Toi thieu 3 ky tu').max(255,'Toi da 255'),
-    email: Yup.required('Truong yeu cau').email('Vui long nhap email'),
-    password: Yup.required('Truong yeu cau').min(3,'Toi thieu 3 ky tu').max(255,'Toi da 255'),
+    name: Yup.string().required('Truong yeu cau').min(3,'Toi thieu 3 ky tu').max(255,'Toi da 255'),
+    email: Yup.string().required('Truong yeu cau').email('Vui long nhap email'),
+    password: Yup.string().required('Truong yeu cau').min(3,'Toi thieu 3 ky tu').max(255,'Toi da 255'),
 });
 
 function Student(props) {
