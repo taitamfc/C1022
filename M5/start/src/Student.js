@@ -1,4 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Formik, Form, Field } from "formik";
+import * as Yup from "yup";
+
+const rules = Yup.object().shape({
+    name: Yup.required('Truong yeu cau').min(3,'Toi thieu 3 ky tu').max(255,'Toi da 255'),
+    email: Yup.required('Truong yeu cau').email('Vui long nhap email'),
+    password: Yup.required('Truong yeu cau').min(3,'Toi thieu 3 ky tu').max(255,'Toi da 255'),
+});
 
 function Student(props) {
     const [formData,setFormData] = useState({
@@ -63,12 +71,23 @@ function Student(props) {
             Email: {formData.email} <br/>
             Password: {formData.password} <br/>
             <hr/>
-            <form onSubmit={handleSubmit}>
-                Name <input type='text' name='name' onChange={handleChange} value={formData.name} /> <br/>
-                Email <input type='email' name='email' onChange={handleChange} value={formData.email} /> <br/>
-                Password <input type='password' name='password' value={formData.password} onChange={handleChange} /> <br/>
-                <button > Register </button>
-            </form>
+
+            <Formik
+            initialValues={formData}
+            validationSchema={rules}
+            onSubmit={ (values) => handleSubmit(values) }
+            >
+            {({ errors, touched }) => (
+
+                <form>
+                    Name <input type='text' name='name' onChange={handleChange} value={formData.name} /> <br/>
+                    Email <input type='email' name='email' onChange={handleChange} value={formData.email} /> <br/>
+                    Password <input type='password' name='password' value={formData.password} onChange={handleChange} /> <br/>
+                    <button > Register </button>
+                </form>
+
+            )}
+            </Formik>
 
             <table>
                 <thead>
