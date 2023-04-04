@@ -8,6 +8,7 @@ import Count from './Count';
 import Calculator from './Calculator';
 import Todo from './Todo';
 import TodoFun from './TodoFun';
+import Student from './Student';
 
 // Render App
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,8 +18,9 @@ root.render(
     {/* <Count/>
     <StateFun/>
     <StateClass/> */}
-    <Todo/>
-    <TodoFun/>
+    {/* <Todo/> */}
+    {/* <TodoFun/> */}
+    <Student/>
   </>
 );
 
