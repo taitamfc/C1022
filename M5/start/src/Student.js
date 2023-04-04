@@ -15,6 +15,11 @@ function Student(props) {
 
     }
 
+    const editStudent = (id) => {
+    }
+    const deleteStudent = (id) => {
+    }
+
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -23,6 +28,31 @@ function Student(props) {
                 Password <input type='password' name='password' onChange={handleChange} /> <br/>
                 <button > Register </button>
             </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th> Ten nhiem vu </th>
+                        <th> Hanh dong </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        students.map((todo, key) => (
+                            <tr key={key}>
+                                <td>
+                                    {todo}
+                                </td>
+                                <td>
+                                    <button onClick={() => editStudent(key)}> Edit </button>
+                                    |
+                                    <button onClick={() => deleteStudent(key)}> Delete </button>
+                                </td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
         </div>
     );
 }
