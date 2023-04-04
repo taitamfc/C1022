@@ -36,7 +36,9 @@ function Student(props) {
         )
     }
     const handleSubmit = () => {
-
+        students.push( formData )
+        let new_students = [...students]
+        setStudents(new_students);
     }
     const editStudent = (id) => {
     }
@@ -65,10 +67,10 @@ function Student(props) {
                 </thead>
                 <tbody>
                     {
-                        students.map((todo, key) => (
+                        students.map((student, key) => (
                             <tr key={key}>
                                 <td>
-                                    {todo}
+                                    {student.name}
                                 </td>
                                 <td>
                                     <button onClick={() => editStudent(key)}> Edit </button>
