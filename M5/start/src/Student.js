@@ -41,6 +41,17 @@ function Student(props) {
         students.push( formData )
         let new_students = [...students]
         setStudents(new_students);
+
+
+        // Làm rỗng đối tượng formData
+        setFormData(
+            {
+                ...formData,
+                name: '',
+                email: '',
+                password: ''
+            }
+        )
     }
     const editStudent = (id) => {
     }
@@ -54,9 +65,9 @@ function Student(props) {
             Password: {formData.password} <br/>
             <hr/>
             <form onSubmit={handleSubmit}>
-                Name <input type='text' name='name' onChange={handleChange} /> <br/>
-                Email <input type='email' name='email' onChange={handleChange} /> <br/>
-                Password <input type='password' name='password' onChange={handleChange} /> <br/>
+                Name <input type='text' name='name' onChange={handleChange} value={formData.name} /> <br/>
+                Email <input type='email' name='email' onChange={handleChange} value={formData.email} /> <br/>
+                Password <input type='password' name='password' value={formData.password} onChange={handleChange} /> <br/>
                 <button > Register </button>
             </form>
 
