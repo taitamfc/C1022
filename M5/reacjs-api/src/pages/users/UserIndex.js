@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import UserModel from '../../models/UserModel';
 class UserIndex extends Component {
     constructor( props ){
         super(props);
@@ -9,7 +10,21 @@ class UserIndex extends Component {
             users: []
         }
     }
+
     componentDidMount() {
+        var mua_sach = new Promise( function(resolve, reject){
+            // thành công
+            //resolve('cuốn sách');
+            // thất bại
+            reject('không có sách')
+        });
+        mua_sach.then(res => {
+            console.log('then',res);
+        })
+        .catch(err => {
+            console.log('catch',err);
+        });
+
         // Method get
         /*
         $.ajax({
@@ -24,13 +39,12 @@ class UserIndex extends Component {
             }
         });
         */
-        axios
-        .get("https://6083df209b2bed00170404a0.mockapi.io/angular/users/")
-        .then(res => {
-        this.setState({ users: res.data });
+        
+        UserModel.getAll().then(res => {
+            this.setState({ users: res.data });
         })
         .catch(err => {
-        throw err;
+            throw err;
         });
     }
 
