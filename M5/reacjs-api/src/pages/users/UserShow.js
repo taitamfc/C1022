@@ -30,33 +30,6 @@ function UserShow(props) {
 
         UserModel.find(id).then(res => {
             setUser(res.data);
-            // Xử lý gọi model ArticleModel
-            ArticleModel.find(res.data.id).then( res => {
-                // Xử lý gọi model ArticleModel
-                ArticleModel.find(res.data.id).then( res => {
-                    // Xử lý gọi model ArticleModel
-                    ArticleModel.find(res.data.id).then( res => {
-                        // Xử lý gọi model ArticleModel
-                        ArticleModel.find(res.data.id).then( res => {
-                            // Xử lý gọi model ArticleModel
-                            ArticleModel.find(res.data.id).then( res => {
-                                // Xử lý gọi model ArticleModel
-                                
-                            }).catch(err => {
-                                throw err;
-                            });
-                        }).catch(err => {
-                            throw err;
-                        });
-                    }).catch(err => {
-                        throw err;
-                    });
-                }).catch(err => {
-                    throw err;
-                });
-            }).catch(err => {
-                throw err;
-            });
         })
         .catch(err => {
             throw err;
