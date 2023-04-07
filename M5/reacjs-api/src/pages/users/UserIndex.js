@@ -12,37 +12,9 @@ class UserIndex extends Component {
     }
 
     componentDidMount() {
-        var mua_sach = new Promise( function(resolve, reject){
-            // thành công
-            //resolve('cuốn sách');
-            // thất bại
-            reject('không có sách')
-        });
-        mua_sach.then(res => {
-            console.log('then',res);
-        })
-        .catch(err => {
-            console.log('catch',err);
-        });
-
-        // Method get
-        /*
-        $.ajax({
-            url: 'https://6083df209b2bed00170404a0.mockapi.io/angular/users/',
-            method: 'GET',
-            dataType: 'json',
-            success: function(res){
-                this.setState({ users: res.data });
-            },
-            error: function(err){
-                throw err;
-            }
-        });
-        */
         UserModel.getAll().then(res => {
             this.setState({ users: res.data });
-        })
-        .catch(err => {
+        }).catch(err => {
             throw err;
         });
     }

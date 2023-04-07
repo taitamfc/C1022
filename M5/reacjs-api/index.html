@@ -1,0 +1,39 @@
+<script>
+    function getUser(name){
+        return new Promise( (resolve, reject) => {
+            resolve(name)
+        })
+    }
+    function getPostsOfUser(user){
+        return new Promise( (resolve, reject) => {
+            resolve('bai viet cua ' + user)
+        })
+    }
+    function getCommentsOfPosts(posts){
+        return new Promise( (resolve, reject) => {
+            resolve( 'binh luan: ' + posts)
+        })
+    }
+
+    // function getCommentOfUser(name){
+    //     getUser(name).then( res => {
+    //         getPostsOfUser(res).then( res => {
+    //             getCommentsOfPosts(res).then( res => {
+    //                 console.log(res);
+    //             })
+    //         })
+    //     });
+    // }
+    // getCommentOfUser('huyen');
+
+    async function getCommentOfUser(name){
+        var user = await getUser(name);
+        var posts = await getPostsOfUser(user);
+        var commets = await getCommentsOfPosts(posts);
+        console.log(user);
+        console.log(posts);
+        console.log(commets);
+    }
+
+    getCommentOfUser('huyen');
+</script>
