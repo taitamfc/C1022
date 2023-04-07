@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
+class UserIndex extends Component {
 
-function UserIndex(props) {
-    return (
-        <div>
-            UserIndex
-        </div>
-    );
+    render() {
+        return (
+            <div>
+                UserIndex
+            </div>
+        );
+    }
 }
 
 export default UserIndex;

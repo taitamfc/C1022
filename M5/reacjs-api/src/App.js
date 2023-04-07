@@ -1,4 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
+import LayoutMaster from "./layouts/LayoutMaster";
 
 import UserIndex from "./pages/users/UserIndex";
 import UserShow from "./pages/users/UserShow";
@@ -10,28 +11,30 @@ import ArticleShow from "./pages/articles/ArticleShow";
 
 function App() {
   return (
-    <div className="App">
-        <ul>
-          <li>
-            <Link to="/users">Users</Link>
-          </li>
-          <li>
-            <Link to="/articles">Articles</Link>
-          </li>
-        </ul>
+    <LayoutMaster>
+      <div className="App">
+          <ul>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+            <li>
+              <Link to="/articles">Articles</Link>
+            </li>
+          </ul>
 
 
-        <Routes>
-          <Route path="/users" element={<UserIndex />} />
-          <Route path="/users/{id}/edit" element={<UserEdit />} />
-          <Route path="/users/{id}/delete" element={<UserDelete />} />
-          <Route path="/users/{id}" element={<UserShow />} />
-          <Route path="/users/create" element={<UserAdd />} />
+          <Routes>
+            <Route path="/users" element={<UserIndex />} />
+            <Route path="/users/{id}/edit" element={<UserEdit />} />
+            <Route path="/users/{id}/delete" element={<UserDelete />} />
+            <Route path="/users/{id}" element={<UserShow />} />
+            <Route path="/users/create" element={<UserAdd />} />
 
-          <Route path="/articles" element={<ArticleIndex />} />
-          <Route path="/articles/{id}" element={<ArticleShow />} />
-        </Routes>
-    </div>
+            <Route path="/articles" element={<ArticleIndex />} />
+            <Route path="/articles/{id}" element={<ArticleShow />} />
+          </Routes>
+      </div>
+    </LayoutMaster>
   );
 }
 
