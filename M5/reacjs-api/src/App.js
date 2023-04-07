@@ -1,4 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
+import './grid.css';
 import LayoutMaster from "./layouts/LayoutMaster";
 
 import UserIndex from "./pages/users/UserIndex";
@@ -13,16 +14,6 @@ function App() {
   return (
     <LayoutMaster>
       <div className="App">
-          <ul>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-            <li>
-              <Link to="/articles">Articles</Link>
-            </li>
-          </ul>
-
-
           <Routes>
             <Route path="/users" element={<UserIndex />} />
             <Route path="/users/{id}/edit" element={<UserEdit />} />
