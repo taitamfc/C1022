@@ -1,5 +1,4 @@
 import axios from "axios";
-
 class UserModel {
     constructor(){
         this.api_url = 'https://6083df209b2bed00170404a0.mockapi.io/angular/users/';

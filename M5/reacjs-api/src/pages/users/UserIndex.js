@@ -39,7 +39,6 @@ class UserIndex extends Component {
             }
         });
         */
-        
         UserModel.getAll().then(res => {
             this.setState({ users: res.data });
         })
