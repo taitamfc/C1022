@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import { Link } from 'react-router-dom';
 class UserIndex extends Component {
     constructor( props ){
         super(props);
@@ -9,8 +10,22 @@ class UserIndex extends Component {
         }
     }
     componentDidMount() {
+        // Method get
+        /*
+        $.ajax({
+            url: 'https://6083df209b2bed00170404a0.mockapi.io/angular/users/',
+            method: 'GET',
+            dataType: 'json',
+            success: function(res){
+                this.setState({ users: res.data });
+            },
+            error: function(err){
+                throw err;
+            }
+        });
+        */
         axios
-          .get("http://localhost:3001/api/users")
+          .get("https://6083df209b2bed00170404a0.mockapi.io/angular/users/")
           .then(res => {
             this.setState({ users: res.data });
           })
@@ -42,9 +57,11 @@ class UserIndex extends Component {
                                         {user.name}
                                     </td>
                                     <td>
-                                        <button onClick={() => this.editUser(key)}> Edit </button>
+                                        <Link to={'/users/' + user.id }>Xem</Link>
                                         |
-                                        <button onClick={() => this.deleteUser(key)}> Delete </button>
+                                        <Link to={'/users/' + user.id + '/edit' }>Sua</Link>
+                                        |
+                                        <Link to={'/users/' + user.id + '/delete' }>Delete</Link>
                                     </td>
                                 </tr>
                             ))
