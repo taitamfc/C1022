@@ -25,13 +25,13 @@ class UserIndex extends Component {
         });
         */
         axios
-          .get("https://6083df209b2bed00170404a0.mockapi.io/angular/users/")
-          .then(res => {
-            this.setState({ users: res.data });
-          })
-          .catch(err => {
-            throw err;
-          });
+        .get("https://6083df209b2bed00170404a0.mockapi.io/angular/users/")
+        .then(res => {
+        this.setState({ users: res.data });
+        })
+        .catch(err => {
+        throw err;
+        });
     }
 
     render() {
