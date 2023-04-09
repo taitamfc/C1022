@@ -9,12 +9,17 @@ import UserAdd from "./pages/users/UserAdd";
 import UserDelete from "./pages/users/UserDelete";
 import ArticleIndex from "./pages/articles/ArticleIndex";
 import ArticleShow from "./pages/articles/ArticleShow";
+import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
 
 function App() {
   return (
     <LayoutMaster>
       <div className="App">
           <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/login" element={<Login />} />
+
             <Route path="/users" element={<UserIndex />} />
             <Route path="/users/:id" element={<UserShow />} />
             <Route path="/users/:id/edit" element={<UserEdit />} />
