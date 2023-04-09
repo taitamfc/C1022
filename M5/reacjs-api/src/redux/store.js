@@ -9,6 +9,13 @@
 3. Cung cấp store ở index.js hoặc App.js ( trước BrowserRouter )
     import { Provider } from "react-redux";
     import store from "./redux/store";
+4. Sử dụng ở các component
+    import { useDispatch, useSelector } from 'react-redux';
+    Lấy state:
+        Ví dụ: const isLoggedIn = useSelector(state => state.isLoggedIn);
+    Gọi action
+        dispatch({ type: TEN_ACTION, payload: DU_LIEU });
+
 */
 import { createStore } from "redux";
 

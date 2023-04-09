@@ -7,6 +7,10 @@ function Login(props) {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const SET_USER = "SET_USER";
+    const SET_CART = "SET_CART";
+    const SET_IS_LOGGED_IN = "SET_IS_LOGGED_IN";
+
     const handleSubmit = () => {
         //Gọi action
 
@@ -15,13 +19,13 @@ function Login(props) {
             name: 'NVA',
             age: 18
         }
-        dispatch({ type: "SET_USER", payload: user });
+        dispatch({ type: SET_USER, payload: user });
 
         // SET_IS_LOGGED_IN
-        dispatch({ type: "SET_IS_LOGGED_IN", payload: 1 });
+        dispatch({ type: SET_IS_LOGGED_IN, payload: 1 });
 
         // SET_CART
-        dispatch({ type: "SET_CART", payload: {} });
+        dispatch({ type: SET_CART, payload: {} });
 
         navigate('/')
     }

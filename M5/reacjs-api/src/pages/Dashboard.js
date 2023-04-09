@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Dashboard(props) {
     const dispatch = useDispatch();
+    const SET_IS_LOGGED_IN = "SET_IS_LOGGED_IN";
 
     // Lấy giá trị của user, isLoggedIn, cart
     const user = useSelector(state => state.user);
@@ -14,7 +15,7 @@ function Dashboard(props) {
     console.log(user,isLoggedIn,cart);
 
     const handleLogout = () => {
-        dispatch({ type: "SET_IS_LOGGED_IN", payload: 0 });
+        dispatch({ type: SET_IS_LOGGED_IN, payload: 0 });
     }
 
     return (
