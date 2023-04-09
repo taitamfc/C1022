@@ -18,7 +18,7 @@
 
 */
 import { createStore } from "redux";
-
+import { applyMiddleware } from "redux";
 //1. Khai báo action
 const SET_USER = "SET_USER";
 const SET_CART = "SET_CART";
@@ -48,7 +48,14 @@ const rootReducer = (state = initialState, action) => {
 };
 
 //3. Khai báo store
-const store = createStore(rootReducer);
+// Tạo middleware myMiddleware
+const myMiddleware = (store) => (next) => (action) => {
+    console.log("action", action);
+    next(action);
+  };
+  
+  // Sử dụng middleware
+const store = createStore(rootReducer, applyMiddleware(myMiddleware));
 
 // theo dõi trạng thái
 store.subscribe(() => {
