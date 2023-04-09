@@ -1,41 +1,49 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { fakeLogin } from "../redux/action";
 
-
-function Login(props) {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-
-    const SET_USER = "SET_USER";
-    const SET_CART = "SET_CART";
-    const SET_IS_LOGGED_IN = "SET_IS_LOGGED_IN";
-
-    const handleSubmit = () => {
-        //Gọi action
-
-        //SET_USER
-        const user = {
-            name: 'NVA',
-            age: 18
-        }
-        dispatch({ type: SET_USER, payload: user });
-
-        // SET_IS_LOGGED_IN
-        dispatch({ type: SET_IS_LOGGED_IN, payload: 1 });
-
-        // SET_CART
-        dispatch({ type: SET_CART, payload: {} });
-
-        navigate('/')
+function Login() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [user, setUser] = useState({ username: "", password: "" });
+  const userlogined = useSelector(state => state.userlogined);
+  const setValueForUser = (key, value) => {
+    const newVal = { ...user, [key]: value };
+    setUser(newVal);
+  };
+  const login = () => {
+    console.log('XL: Login -> call login');
+    dispatch(fakeLogin(user));
+  };
+  useEffect(() => {
+    if (userlogined.username) {
+      navigate("/");
     }
-
-    return (
-        <div>
-            <h1>Login</h1>
-            <button onClick={ handleSubmit } >Login</button>
-        </div>
-    );
+  }, [userlogined, navigate]);
+  return (
+    <form>
+      <label>User name</label>
+      <input
+        id="username"
+        onChange={e => setValueForUser("username", e.target.value)}
+        type="text"
+      />
+      <label>Password</label>
+      <input
+        id="password"
+        onChange={e => setValueForUser("password", e.target.value)}
+        type="password"
+      />
+      <button
+        type="button"
+        onClick={() => {
+          login();
+        }}
+      >
+        Login
+      </button>
+    </form>
+  );
 }
-
 export default Login;
