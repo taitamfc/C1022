@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 
 function Login(props) {
@@ -10,6 +10,9 @@ function Login(props) {
     const SET_USER = "SET_USER";
     const SET_CART = "SET_CART";
     const SET_IS_LOGGED_IN = "SET_IS_LOGGED_IN";
+    const SET_USERNAME = "SET_USERNAME";
+
+    const username = useSelector( state => state.username )
 
     const handleSubmit = () => {
         //Gọi action
@@ -27,12 +30,20 @@ function Login(props) {
         // SET_CART
         dispatch({ type: SET_CART, payload: {} });
 
+        // SET_USERNAME
+        dispatch(
+            {
+                type: SET_USERNAME,
+                payload: 'Nho'
+            }
+        );
+
         navigate('/')
     }
 
     return (
         <div>
-            <h1>Login</h1>
+            <h1>Login - {username}</h1>
             <button onClick={ handleSubmit } >Login</button>
         </div>
     );

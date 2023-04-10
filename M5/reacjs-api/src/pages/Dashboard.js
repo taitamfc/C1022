@@ -8,8 +8,10 @@ function Dashboard(props) {
 
     // Lấy giá trị của user, isLoggedIn, cart
     const user = useSelector(state => state.user);
+    // lay isLoggedIn tu store
     const isLoggedIn = useSelector(state => state.isLoggedIn);
     const cart = useSelector(state => state.cart);
+    const username = useSelector( state => state.username )
 
     // const {user,isLoggedIn,cart} = useSelector(state);
     console.log(user,isLoggedIn,cart);
@@ -33,7 +35,7 @@ function Dashboard(props) {
                     <h3>Bạn chưa đăng nhập nhấn vào <Link to={'/login'}> đây </Link> để đăng nhập </h3>
                 )
             }
-            <h1>Dashboard</h1>
+            <h1>Dashboard - {username}</h1>
         </div>
     );
 }
