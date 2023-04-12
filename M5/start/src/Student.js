@@ -17,6 +17,15 @@ function Student(props) {
     const [students,setStudents] = useState([]);
     const [formErrors,setFormErrors] = useState([]);
 
+    useEffect( () => {
+        // Set form data
+        setFormData({
+            name: 'NVC',
+            email: 'a@gmail.com',
+            password : '1234'
+        })
+    },[] );
+
     const handleChange = (event) => {
         setFormData(
             {
@@ -32,21 +41,20 @@ function Student(props) {
         let new_students = [...students]
         setStudents(new_students);
 
-        // Làm rỗng formik
+        
     }
     const editStudent = (id) => {
     }
     const deleteStudent = (id) => {
     }
-
     return (
         <div>
             Name: {formData.name} <br/>
             Email: {formData.email} <br/>
             Password: {formData.password} <br/>
             <hr/>
-
             <Formik
+            enableReinitialize={true}
             initialValues={formData}
             validationSchema={rules}
             onSubmit={ (values) => handleSubmit(values) }
