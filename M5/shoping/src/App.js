@@ -8,7 +8,6 @@ import Cart from './pages/Cart';
 
 function App() {
   return (
-    <LayoutMaster>
     <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -16,7 +15,6 @@ function App() {
           <Route path="/cart" element={<Cart />} />
         </Routes>
     </div>
-  </LayoutMaster>
   );
 }
 
