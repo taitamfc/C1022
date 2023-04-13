@@ -1,29 +1,19 @@
 import Header from "../includes/Header";
 import Footer from "../includes/Footer";
 import Sidebar from "../includes/Sidebar";
+import Navigation from "../includes/Navigation";
 export default function LayoutMaster({ children }) {
     const username = 'NVA';
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col-12">
-                    <Header username={username}/>
+        <>
+            <Navigation/>
+            <Header/>
+            <section className="py-5">
+                <div className="container px-4 px-lg-5 mt-5">
+                    {children}
                 </div>
-            </div>
-            <div className="row">
-                <div className="col-4">
-                    <Sidebar/>
-                </div>
-                <div className="col-8">
-                    {/* Dòng này giống @yield('content') */}
-                    <div>{children}</div>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-12">
-                    <Footer/>
-                </div>
-            </div>
-        </div>
+            </section>
+            <Footer/>
+        </>
     );
 }
