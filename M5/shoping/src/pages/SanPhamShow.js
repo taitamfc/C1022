@@ -27,12 +27,14 @@ function SanPhamShow(props) {
     const handleAddToCart = () => {
         const cart = {
             id: id,
+            name: product.name,
+            price: product.price,
             qty: qty
 
         }
         carts.push(cart);
         dispatch({ type: SET_CART, payload: carts });
-        navigate('/')
+        navigate('/cart')
     }
     const handleQty = (event) => {
         setQty(event.target.value);
