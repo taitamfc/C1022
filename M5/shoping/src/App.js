@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import LayoutMaster from './layouts/LayoutMaster';
-import { Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import SanPhamShow from './pages/SanPhamShow';
 import Cart from './pages/Cart';
