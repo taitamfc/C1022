@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import ProductModel from '../models/ProductModel';
 import LayoutMaster from '../layouts/LayoutMaster';
 import { useDispatch, useSelector } from "react-redux";
@@ -7,6 +8,7 @@ import { SET_CART } from '../redux/action';
 
 function SanPhamShow(props) {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const {id} = useParams();
     const [product,setProduct] = useState({});
     const [qty,setQty] = useState(1);
@@ -28,9 +30,9 @@ function SanPhamShow(props) {
             qty: qty
 
         }
-        console.log(carts);
         carts.push(cart);
         dispatch({ type: SET_CART, payload: carts });
+        navigate('/')
     }
     const handleQty = (event) => {
         setQty(event.target.value);
