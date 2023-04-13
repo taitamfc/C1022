@@ -12,7 +12,7 @@ function Cart(props) {
         <LayoutMaster>
             <div className="row gx-4 gx-lg-5 align-items-center">
                 <div className="col-md-6">
-                    <table className='table'>
+                    <table className='table table-striped table-hover'>
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
