@@ -17,9 +17,11 @@
 
 /* Header */
 .header {
-    background-color: black;
+    /* background-color: black; */
     padding-top: 30px;
     padding-bottom: 30px;
+    position: fixed;
+    width: 100%;
 }
 .logo img {
     width: 100%;
