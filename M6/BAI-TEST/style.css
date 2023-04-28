@@ -1,0 +1,461 @@
+/* add fonts */
+@font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/DMSans-Regular.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/DMSans-Bold.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Judson';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Judson-Regular.ttf) format('woff2');
+}
+
+/* header */
+.header {
+    background-color: black;
+}
+
+.header-sticky {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: RGBA(0, 0, 0, 0) !important;
+    min-height: 150px;
+    z-index: 1000;
+    position: fixed !important;
+    top: 0px;
+    bottom: auto;
+    left: 0px;
+    right: auto;
+    width: 100%;
+    
+}
+
+.nav {
+    /* hiển thị dạng lưới */
+    display: flex;
+    /* căn giữa */
+    justify-content: center;
+}
+
+.nav li {
+    margin-top: 8px;
+    padding-left: 11px;
+    padding-right: 11px;
+    font-size: 14px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.phone-wrapper {
+    display: flex;
+    float: right;
+
+}
+
+.phone-wrapper a {
+    text-decoration: none;
+    color: white;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+
+}
+
+.phone-text {
+    margin-left: 10px;
+
+}
+
+.contact-text {
+    background: #FFFFFF;
+    border-radius: 80px;
+    padding: 22px 40px;
+    text-align: center;
+
+}
+
+.contact-text a {
+    color: #041C2C;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.center-middle {
+    align-items: center;
+}
+
+/* inner-page-hero */
+.inner-page-hero {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%), url(https://www.addstyle.net/wp-content/uploads/2021/11/services-banner.jpg) !important;
+    min-height: 500px;
+    display: flex;
+    /* canh đều trên dưới */
+    align-items: center;
+    /* canh đều trái phải */
+    justify-content: center;
+    background-size: cover;
+    position: relative;
+    background-color: #fff;
+    background-position: 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+
+.title_container h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Judson';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+}
+
+/* main-content */
+.main-content {
+    padding-top: 60px;
+}
+
+.heading-line {
+    text-align: center;
+}
+
+.heading-line h2 {
+    font-family: 'Judson';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+}
+
+.heading-line::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    /* left: 0; */
+    /* top: 0; */
+    background: #D1AD80;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.heading-wrapper {
+    position: relative;
+    margin-bottom: 52px;
+}
+
+.service-image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.promo_button {
+    text-decoration: none;
+    color: #041C2C;
+}
+
+.button-second a {
+    background: #041C2C;
+    border-radius: 80px;
+    padding: 22px 40px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+
+}
+
+.service-content {
+    padding-top: 48px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 48px;
+}
+
+.service-title {
+    font-family: 'Judson';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+}
+
+/* service items */
+.service {
+    background: #FFFFFF;
+    box-shadow: 4px 16px 36px rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+    margin-bottom: 32px;
+}
+
+.service-image img {
+    height: 259px;
+    border-radius: 16px 16px 0px 0px;
+}
+
+.main-content-second {
+    background: #F8F8F8;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-right: 48px;
+    margin-bottom: 48px;
+    margin-left: 48px;
+}
+
+.heading-line-second {
+    margin-bottom: 40px;
+    font-family: 'Judson';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+}
+
+.text-second {
+    margin-bottom: 48px;
+    font-size: 16px;
+    color: #777777;
+    padding-right: 75px;
+}
+
+.heading-line-second::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background: #D1AD80;
+    left: 3.5%;
+    transform: translateX(-50%);
+}
+
+.heading-line-wrapper {
+    position: relative;
+}
+
+.heading-line-second h1 {
+    padding-top: 10px;
+}
+
+.image-content img {
+    width: 100%;
+}
+
+.image-content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.main-content-third {
+    background-image: url(/images/cta.png);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 112px;
+    padding-bottom: 151px;
+}
+
+.main-content-third h2 {
+    font-family: 'Judson';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.cta_container {
+    max-width: 700px;
+    text-align: center;
+}
+
+.cta-button {
+    text-decoration: none;
+    color: #041C2C;
+    padding: 22px 40px;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 80px;
+
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    margin-top: 27px;
+    display: inline-block;
+
+}
+
+.box-footer {
+    position: relative;
+    padding-left: 50px;
+}
+
+.box-footer-title::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background: #D1AD80;
+    left: 17.5%;
+    transform: translateX(-50%);
+}
+
+
+.box-footer-title h4 {
+    padding-top: 8px;
+    margin-bottom: 20px;
+    font-family: 'Judson';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+}
+
+.box-footer-image img {
+    width: 100%;
+    border-radius: 16px 16px 0px 0px;
+    max-height: 172px;
+}
+.box-footer-botton {
+    display: flex;
+    
+}
+.box-footer-address {
+    margin-left: 8px;
+    
+}
+.box-footer-address h4{
+    font-family: 'DM Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+}
+.box-footer-botton {
+    padding-top: 14px;
+    padding-bottom: 4px;
+    background: #FFFFFF;
+    padding-left: 32px;
+    border-radius:0px 0px 16px 16px ;
+}
+.box-footer-icon img {
+    width: 14px;
+    height: 16px;
+    margin-top: -12px;
+}
+.box-footer-wrapper {
+    box-shadow: 4px 16px 36px rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+}
+.social-menu {
+    list-style-type: none!important;
+    margin: 0 0 22px;
+    padding: 0;
+}
+.social-menu li{
+    display: inline-block;
+    margin-bottom: 8px;
+    position: relative;
+    margin-right: 8px;
+}
+.social-menu li a {
+    border-radius: 48px 48px 48px 48px;
+    border-width: 1px;
+    border-color: rgba(255,255,255,0.1);
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 48px;
+}
+.box-footer-about:before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    bottom: -60px;
+    right: 0;
+    width: 100vw;
+    background: #041C2C;
+}
+.box-footer-about-wrapper{
+    position: relative;
+}
+.box-text, .box-image{
+    position: relative;
+    color: 
+    #FFFFFF;
+    font-family: 'DM Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+}
+.box-image , .box-text {
+    margin-bottom: 24px;
+}
+.box-text p {
+    margin: 0px;
+}
+.footer-top{
+    background: #E5E5E5;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.footer-copy-right p {
+    color: #777777;
+    font-family: 'DM Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+}
+.footer-bottom {
+    padding-top: 32px;
+    padding-bottom: 13px;
+    background: white;
+
+}
+ul.menu-footer {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+ul.menu-footer li {
+    display: inline-block;
+    margin-bottom: 8px;
+    position: relative;
+    margin-right: 37px;
+
+}
+ul.menu-footer a {
+    font-family: 'DM Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+color: #777777;
+text-decoration: none;
+}
+.footer-menu {
+    float: right;
+}
