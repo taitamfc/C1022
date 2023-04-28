@@ -43,12 +43,13 @@
     margin-right: 8px;
 }
 .contact-button {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 13px;
+    padding-bottom: 13px;
     padding-left: 40px;
     padding-right: 40px;
     background: #FFFFFF;
     border-radius: 80px;
+    text-align: center;
 }
 .contact-button a {
     text-decoration: none;
@@ -87,4 +88,17 @@ ul.main-menu li:last-child {
     align-items: center;
     /* Canh giua trai phai */
     justify-content: center;
+    /* Canh giua van ban */
+    text-align: center;
+}
+.page-title {
+    font-family: 'Judson';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    color: #FFFFFF;
+}
+.hero {
+    background-image: url('../images/bg-header.png');
+    min-height: 500px;
 }
