@@ -82,5 +82,9 @@ ul.main-menu li:last-child {
     margin-right: 0;
 }
 .center-items {
+    display: flex;
+    /* Canh giua tren duoi */
     align-items: center;
+    /* Canh giua trai phai */
+    justify-content: center;
 }
