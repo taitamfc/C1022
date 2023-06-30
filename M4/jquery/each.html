@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.3.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>Item 11</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+    <script>
+
+        let val1 = $('li')[0];
+        console.log( $( val1 ).text() );
+
+        $('li').each( function(key,val){
+            /*
+            $('li')[0]
+            $('li')[1]
+            $('li')[2]
+            $('li')[3]
+            */
+            $( val ).text()
+        });
+
+        let books = [
+            {
+                'title':'item 1'
+            },
+            {
+                'title':'item 2'
+            }
+        ];
+
+        console.log( books[0].title );
+        /*
+        for
+        while
+        do_while
+
+        php:
+        foreach( items as key => value )
+        */
+
+
+    </script>
+</body>
+</html>
